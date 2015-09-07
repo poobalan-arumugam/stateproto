@@ -1,135 +1,88 @@
-<VisualStudioProject>
-    <CSHARP
-        ProjectType = "Local"
-        ProductVersion = "7.10.3077"
-        SchemaVersion = "2.0"
-        ProjectGuid = "{7FA8F10A-4AC6-43E3-BB56-CB09996F5970}"
-    >
-        <Build>
-            <Settings
-                ApplicationIcon = ""
-                AssemblyKeyContainerName = ""
-                AssemblyName = "MurphyPA.H2D.StateInteraction"
-                AssemblyOriginatorKeyFile = ""
-                DefaultClientScript = "JScript"
-                DefaultHTMLPageLayout = "Grid"
-                DefaultTargetSchema = "IE50"
-                DelaySign = "false"
-                OutputType = "Library"
-                PreBuildEvent = ""
-                PostBuildEvent = ""
-                RootNamespace = "MurphyPA.H2D.StateInteraction"
-                RunPostBuildEvent = "OnBuildSuccess"
-                StartupObject = ""
-            >
-                <Config
-                    Name = "Debug"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "DEBUG;TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "true"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "false"
-                    OutputPath = "..\..\..\..\..\..\bin\lib\stateproto_qf4net\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-                <Config
-                    Name = "Release"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "false"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "true"
-                    OutputPath = "..\..\..\..\..\..\bin\lib\stateproto_qf4net\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-            </Settings>
-            <References>
-                <Reference
-                    Name = "System"
-                    AssemblyName = "System"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
-                />
-                <Reference
-                    Name = "System.Data"
-                    AssemblyName = "System.Data"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
-                />
-                <Reference
-                    Name = "System.XML"
-                    AssemblyName = "System.Xml"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
-                />
-                <Reference
-                    Name = "System.Windows.Forms"
-                    AssemblyName = "System.Windows.Forms"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
-                />
-                <Reference
-                    Name = "LoggingUtil"
-                    AssemblyName = "LoggingUtil"
-                    HintPath = "..\..\..\..\..\..\bin\lib\common\LoggingUtil.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "StepByStep.Modelling.QF4NetExtensions"
-                    AssemblyName = "StepByStep.Modelling.QF4NetExtensions"
-                    HintPath = "..\..\..\..\..\..\bin\lib\qf4net\StepByStep.Modelling.QF4NetExtensions.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "qf4net"
-                    AssemblyName = "qf4net"
-                    HintPath = "..\..\..\..\..\..\bin\lib\qf4net\qf4net.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "MurphyPA.H2D.StateProto"
-                    AssemblyName = "MurphyPA.H2D.StateProto"
-                    HintPath = "..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.StateProto.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "MurphyPA.H2D.Interfaces"
-                    AssemblyName = "MurphyPA.H2D.Interfaces"
-                    HintPath = "..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.Interfaces.dll"
-                    Private = "False"
-                />
-            </References>
-        </Build>
-        <Files>
-            <Include>
-                <File
-                    RelPath = "AssemblyInfo.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "StateProtoViewAnimator.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-            </Include>
-        </Files>
-    </CSHARP>
+<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ToolsVersion="4.0">
+  <CSHARP ProjectType="Local" ProductVersion="7.10.3077" SchemaVersion="2.0" ProjectGuid="{7FA8F10A-4AC6-43E3-BB56-CB09996F5970}">
+    <Build>
+      <Settings ApplicationIcon="" AssemblyKeyContainerName="" AssemblyName="MurphyPA.H2D.StateInteraction" AssemblyOriginatorKeyFile="" DefaultClientScript="JScript" DefaultHTMLPageLayout="Grid" DefaultTargetSchema="IE50" DelaySign="false" OutputType="Library" PreBuildEvent="" PostBuildEvent="" RootNamespace="MurphyPA.H2D.StateInteraction" RunPostBuildEvent="OnBuildSuccess" StartupObject="">
+        <Config Name="Debug" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="DEBUG;TRACE" DocumentationFile="" DebugSymbols="true" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="false" OutputPath="..\..\..\..\..\..\bin\lib\stateproto_qf4net\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+        <Config Name="Release" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="TRACE" DocumentationFile="" DebugSymbols="false" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="true" OutputPath="..\..\..\..\..\..\bin\lib\stateproto_qf4net\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+      </Settings>
+      <References>
+        <Reference Name="System" AssemblyName="System" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll" />
+        <Reference Name="System.Data" AssemblyName="System.Data" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll" />
+        <Reference Name="System.XML" AssemblyName="System.Xml" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll" />
+        <Reference Name="System.Windows.Forms" AssemblyName="System.Windows.Forms" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll" />
+        <Reference Name="LoggingUtil" AssemblyName="LoggingUtil" HintPath="..\..\..\..\..\..\bin\lib\common\LoggingUtil.dll" Private="False" />
+        <Reference Name="StepByStep.Modelling.QF4NetExtensions" AssemblyName="StepByStep.Modelling.QF4NetExtensions" HintPath="..\..\..\..\..\..\bin\lib\qf4net\StepByStep.Modelling.QF4NetExtensions.dll" Private="False" />
+        <Reference Name="qf4net" AssemblyName="qf4net" HintPath="..\..\..\..\..\..\bin\lib\qf4net\qf4net.dll" Private="False" />
+        <Reference Name="MurphyPA.H2D.StateProto" AssemblyName="MurphyPA.H2D.StateProto" HintPath="..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.StateProto.dll" Private="False" />
+        <Reference Name="MurphyPA.H2D.Interfaces" AssemblyName="MurphyPA.H2D.Interfaces" HintPath="..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.Interfaces.dll" Private="False" />
+      </References>
+    </Build>
+    <Files>
+      <Include>
+        <File RelPath="AssemblyInfo.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="StateProtoViewAnimator.cs" SubType="Code" BuildAction="Compile" />
+      </Include>
+    </Files>
+  </CSHARP>
+  <PropertyGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33A7AE30-E1C9-445C-8C67-3305637A948B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MurphyPA.H2D.StateInteraction</RootNamespace>
+    <AssemblyName>MurphyPA.H2D.StateInteraction</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto_qf4net\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunWithWarnings>false</RunWithWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto_qf4net\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunWithWarnings>false</RunWithWarnings>
+  </PropertyGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="StateProtoViewAnimator.cs" />
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ProjectReference Include="..\LoggingUtil\LoggingUtil.csproj">
+      <Project>{D8E55FAD-D951-4ED5-BB56-34E24D85D207}</Project>
+      <Name>LoggingUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MurphyPA.H2D.Interfaces\MurphyPA.H2D.Interfaces.csproj">
+      <Project>{5EDB4FCB-FE55-42B0-9B41-A7923F90028B}</Project>
+      <Name>MurphyPA.H2D.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StateProto\StateProto.csproj">
+      <Project>{EFFF3816-2EED-4E89-BECD-6F363CAB5406}</Project>
+      <Name>StateProto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MurphyPA.H2D.QF4NetExtensions\MurphyPA.H2D.QF4NetExtensions.csproj">
+      <Project>{D72506A6-B055-46EC-A7F7-D3EB7A02EDAD}</Project>
+      <Name>MurphyPA.H2D.QF4NetExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdparty\HierarchicalStateMachine\src\qf4net.csproj">
+      <Project>{BBA3D39A-83D0-4745-997F-13687AFC5141}</Project>
+      <Name>qf4net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MurphyPA.H2D.TestApp\MurphyPA.H2D.TestApp.csproj">
+      <Project>{FFC62901-A438-4D38-B9BA-27193F96B5CB}</Project>
+      <Name>MurphyPA.H2D.TestApp</Name>
+    </ProjectReference>
+  </ItemGroup>
 </VisualStudioProject>
-

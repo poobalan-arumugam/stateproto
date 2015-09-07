@@ -1,434 +1,230 @@
-<VisualStudioProject>
-    <CSHARP
-        ProjectType = "Local"
-        ProductVersion = "7.10.3077"
-        SchemaVersion = "2.0"
-        ProjectGuid = "{E7863CCB-E822-4D73-B108-E1618087399A}"
-    >
-        <Build>
-            <Settings
-                ApplicationIcon = "App.ico"
-                AssemblyKeyContainerName = ""
-                AssemblyName = "MurphyPA.H2D.StateProto"
-                AssemblyOriginatorKeyFile = ""
-                DefaultClientScript = "JScript"
-                DefaultHTMLPageLayout = "Grid"
-                DefaultTargetSchema = "IE50"
-                DelaySign = "false"
-                OutputType = "Library"
-                PreBuildEvent = ""
-                PostBuildEvent = ""
-                RootNamespace = "MurphyPA.H2D.TestApp"
-                RunPostBuildEvent = "OnBuildSuccess"
-                StartupObject = "MurphyPA.H2D.TestApp.EntryPoint"
-            >
-                <Config
-                    Name = "Debug"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "DEBUG;TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "true"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "false"
-                    OutputPath = "..\..\..\..\..\..\bin\lib\stateproto\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-                <Config
-                    Name = "Release"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "false"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "true"
-                    OutputPath = "..\..\..\..\..\..\bin\lib\stateproto\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-            </Settings>
-            <References>
-                <Reference
-                    Name = "System"
-                    AssemblyName = "System"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
-                />
-                <Reference
-                    Name = "System.Data"
-                    AssemblyName = "System.Data"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
-                />
-                <Reference
-                    Name = "System.Drawing"
-                    AssemblyName = "System.Drawing"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
-                />
-                <Reference
-                    Name = "System.Windows.Forms"
-                    AssemblyName = "System.Windows.Forms"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
-                />
-                <Reference
-                    Name = "System.XML"
-                    AssemblyName = "System.Xml"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
-                />
-                <Reference
-                    Name = "LoggingUtil"
-                    AssemblyName = "LoggingUtil"
-                    HintPath = "..\..\..\..\..\..\bin\lib\common\LoggingUtil.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "qf4net"
-                    AssemblyName = "qf4net"
-                    HintPath = "..\..\..\..\..\..\bin\lib\qf4net\qf4net.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "MurphyPA.H2D.Implementation"
-                    AssemblyName = "MurphyPA.H2D.Implementation"
-                    HintPath = "..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.Implementation.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "MurphyPA.H2D.Interfaces"
-                    AssemblyName = "MurphyPA.H2D.Interfaces"
-                    HintPath = "..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.Interfaces.dll"
-                    Private = "False"
-                />
-                <Reference
-                    Name = "StepByStep.Modelling.QF4NetExtensions"
-                    AssemblyName = "StepByStep.Modelling.QF4NetExtensions"
-                    HintPath = "..\..\..\..\..\..\bin\lib\qf4net\StepByStep.Modelling.QF4NetExtensions.dll"
-                    Private = "False"
-                />
-            </References>
-        </Build>
-        <Files>
-            <Include>
-                <File
-                    RelPath = "ActionAnalyser.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "App.ico"
-                    BuildAction = "Content"
-                />
-                <File
-                    RelPath = "AssemblyInfo.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "CodeBlock.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "CodeCompiler.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ConvertToCode.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ConvertToCodeBase.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ConvertToCodeGlyphSorter.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ConvertToCodeWithSaveDialogCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ConvertToXml.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ConvertToXmlWithSaveDialogCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "DiagramCommandBase.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "DiagramModel.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "DrawingSurface.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "DrawingSurface.resx"
-                    DependentUpon = "DrawingSurface.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "EntryPoint.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ExecuteHsmCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ExecutionController.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ExecutionControllerView.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ExecutionControllerView.resx"
-                    DependentUpon = "ExecutionControllerView.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "GlyphPropertyWindow.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "GlyphPropertyWindow.resx"
-                    DependentUpon = "GlyphPropertyWindow.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "GuiCommandBase.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "HsmUtil.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ICommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "InputDialog.cs"
-                    SubType = "Form"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "InputDialog.resx"
-                    DependentUpon = "InputDialog.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "IUIInteractionHandler.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IUIInterationContext.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "LoadFileCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "LoadFileWithDialogCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "LoadGlyphDataFile.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "LogHandler.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "OkCancelForm.cs"
-                    SubType = "Form"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "OkCancelForm.resx"
-                    DependentUpon = "OkCancelForm.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "ProcessComponentFrame.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ProcessComponentFrameExecutionView.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ProcessComponentFrameExecutionView.resx"
-                    DependentUpon = "ProcessComponentFrameExecutionView.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "QHsmExecutionController.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "QHsmExecutionControllerView.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "QHsmExecutionControllerView.resx"
-                    DependentUpon = "QHsmExecutionControllerView.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "SaveAsImageCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "SaveFileWithDialogCommand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "SaveGlyphDataFile.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "SignalActionParser.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "SimpleStringEditor.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "StateDiagramView.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "StateDiagramView.resx"
-                    DependentUpon = "StateDiagramView.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "StateMachineHeader.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "StringEntry.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "StringEntry.resx"
-                    DependentUpon = "StringEntry.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "TestAppForm.cs"
-                    SubType = "Form"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "TestAppForm.resx"
-                    DependentUpon = "TestAppForm.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "TestStateGlyphControl.cs"
-                    SubType = "UserControl"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "TestStateGlyphControl.resx"
-                    DependentUpon = "TestStateGlyphControl.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "UIGlyphCreater.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "UIGlyphGroupSelector.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "UIGlyphInteractionHandlerBase.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "UIGlyphKeyboardInputInteractor.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "UIGlyphMoveAndReparent.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "UISelectorBand.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-            </Include>
-        </Files>
-    </CSHARP>
+<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ToolsVersion="4.0">
+  <CSHARP ProjectType="Local" ProductVersion="7.10.3077" SchemaVersion="2.0" ProjectGuid="{E7863CCB-E822-4D73-B108-E1618087399A}">
+    <Build>
+      <Settings ApplicationIcon="App.ico" AssemblyKeyContainerName="" AssemblyName="MurphyPA.H2D.StateProto" AssemblyOriginatorKeyFile="" DefaultClientScript="JScript" DefaultHTMLPageLayout="Grid" DefaultTargetSchema="IE50" DelaySign="false" OutputType="Library" PreBuildEvent="" PostBuildEvent="" RootNamespace="MurphyPA.H2D.TestApp" RunPostBuildEvent="OnBuildSuccess" StartupObject="MurphyPA.H2D.TestApp.EntryPoint">
+        <Config Name="Debug" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="DEBUG;TRACE" DocumentationFile="" DebugSymbols="true" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="false" OutputPath="..\..\..\..\..\..\bin\lib\stateproto\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+        <Config Name="Release" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="TRACE" DocumentationFile="" DebugSymbols="false" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="true" OutputPath="..\..\..\..\..\..\bin\lib\stateproto\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+      </Settings>
+      <References>
+        <Reference Name="System" AssemblyName="System" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll" />
+        <Reference Name="System.Data" AssemblyName="System.Data" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll" />
+        <Reference Name="System.Drawing" AssemblyName="System.Drawing" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll" />
+        <Reference Name="System.Windows.Forms" AssemblyName="System.Windows.Forms" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll" />
+        <Reference Name="System.XML" AssemblyName="System.Xml" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll" />
+        <Reference Name="LoggingUtil" AssemblyName="LoggingUtil" HintPath="..\..\..\..\..\..\bin\lib\common\LoggingUtil.dll" Private="False" />
+        <Reference Name="qf4net" AssemblyName="qf4net" HintPath="..\..\..\..\..\..\bin\lib\qf4net\qf4net.dll" Private="False" />
+        <Reference Name="MurphyPA.H2D.Implementation" AssemblyName="MurphyPA.H2D.Implementation" HintPath="..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.Implementation.dll" Private="False" />
+        <Reference Name="MurphyPA.H2D.Interfaces" AssemblyName="MurphyPA.H2D.Interfaces" HintPath="..\..\..\..\..\..\bin\lib\stateproto\MurphyPA.H2D.Interfaces.dll" Private="False" />
+        <Reference Name="StepByStep.Modelling.QF4NetExtensions" AssemblyName="StepByStep.Modelling.QF4NetExtensions" HintPath="..\..\..\..\..\..\bin\lib\qf4net\StepByStep.Modelling.QF4NetExtensions.dll" Private="False" />
+      </References>
+    </Build>
+    <Files>
+      <Include>
+        <File RelPath="ActionAnalyser.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="App.ico" BuildAction="Content" />
+        <File RelPath="AssemblyInfo.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="CodeBlock.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="CodeCompiler.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ConvertToCode.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ConvertToCodeBase.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ConvertToCodeGlyphSorter.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ConvertToCodeWithSaveDialogCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ConvertToXml.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ConvertToXmlWithSaveDialogCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="DiagramCommandBase.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="DiagramModel.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="DrawingSurface.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="DrawingSurface.resx" DependentUpon="DrawingSurface.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="EntryPoint.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ExecuteHsmCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ExecutionController.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ExecutionControllerView.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="ExecutionControllerView.resx" DependentUpon="ExecutionControllerView.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="GlyphPropertyWindow.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="GlyphPropertyWindow.resx" DependentUpon="GlyphPropertyWindow.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="GuiCommandBase.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="HsmUtil.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ICommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="InputDialog.cs" SubType="Form" BuildAction="Compile" />
+        <File RelPath="InputDialog.resx" DependentUpon="InputDialog.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="IUIInteractionHandler.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IUIInterationContext.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="LoadFileCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="LoadFileWithDialogCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="LoadGlyphDataFile.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="LogHandler.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="OkCancelForm.cs" SubType="Form" BuildAction="Compile" />
+        <File RelPath="OkCancelForm.resx" DependentUpon="OkCancelForm.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="ProcessComponentFrame.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ProcessComponentFrameExecutionView.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="ProcessComponentFrameExecutionView.resx" DependentUpon="ProcessComponentFrameExecutionView.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="QHsmExecutionController.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="QHsmExecutionControllerView.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="QHsmExecutionControllerView.resx" DependentUpon="QHsmExecutionControllerView.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="SaveAsImageCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="SaveFileWithDialogCommand.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="SaveGlyphDataFile.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="SignalActionParser.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="SimpleStringEditor.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="StateDiagramView.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="StateDiagramView.resx" DependentUpon="StateDiagramView.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="StateMachineHeader.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="StringEntry.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="StringEntry.resx" DependentUpon="StringEntry.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="TestAppForm.cs" SubType="Form" BuildAction="Compile" />
+        <File RelPath="TestAppForm.resx" DependentUpon="TestAppForm.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="TestStateGlyphControl.cs" SubType="UserControl" BuildAction="Compile" />
+        <File RelPath="TestStateGlyphControl.resx" DependentUpon="TestStateGlyphControl.cs" BuildAction="EmbeddedResource" />
+        <File RelPath="UIGlyphCreater.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="UIGlyphGroupSelector.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="UIGlyphInteractionHandlerBase.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="UIGlyphKeyboardInputInteractor.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="UIGlyphMoveAndReparent.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="UISelectorBand.cs" SubType="Code" BuildAction="Compile" />
+      </Include>
+    </Files>
+  </CSHARP>
+  <PropertyGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFC62901-A438-4D38-B9BA-27193F96B5CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MurphyPA.H2D.TestApp</RootNamespace>
+    <AssemblyName>MurphyPA.H2D.StateProto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunWithWarnings>false</RunWithWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunWithWarnings>false</RunWithWarnings>
+  </PropertyGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Compile Include="ActionAnalyser.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CodeBlock.cs" />
+    <Compile Include="CodeCompiler.cs" />
+    <Compile Include="ConvertToCode.cs" />
+    <Compile Include="ConvertToCodeBase.cs" />
+    <Compile Include="ConvertToCodeGlyphSorter.cs" />
+    <Compile Include="ConvertToCodeWithSaveDialogCommand.cs" />
+    <Compile Include="ConvertToXml.cs" />
+    <Compile Include="ConvertToXmlWithSaveDialogCommand.cs" />
+    <Compile Include="DiagramCommandBase.cs" />
+    <Compile Include="DiagramModel.cs" />
+    <Compile Include="DrawingSurface.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="ExecuteHsmCommand.cs" />
+    <Compile Include="ExecutionController.cs" />
+    <Compile Include="ExecutionControllerView.cs" />
+    <Compile Include="GlyphPropertyWindow.cs" />
+    <Compile Include="GuiCommandBase.cs" />
+    <Compile Include="HsmUtil.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="InputDialog.cs" />
+    <Compile Include="IUIInteractionHandler.cs" />
+    <Compile Include="IUIInterationContext.cs" />
+    <Compile Include="LoadFileCommand.cs" />
+    <Compile Include="LoadFileWithDialogCommand.cs" />
+    <Compile Include="LoadGlyphDataFile.cs" />
+    <Compile Include="LogHandler.cs" />
+    <Compile Include="OkCancelForm.cs" />
+    <Compile Include="ProcessComponentFrame.cs" />
+    <Compile Include="ProcessComponentFrameExecutionView.cs" />
+    <Compile Include="QHsmExecutionController.cs" />
+    <Compile Include="QHsmExecutionControllerView.cs" />
+    <Compile Include="SaveAsImageCommand.cs" />
+    <Compile Include="SaveFileWithDialogCommand.cs" />
+    <Compile Include="SaveGlyphDataFile.cs" />
+    <Compile Include="SignalActionParser.cs" />
+    <Compile Include="SimpleStringEditor.cs" />
+    <Compile Include="StateDiagramView.cs" />
+    <Compile Include="StateMachineHeader.cs" />
+    <Compile Include="StringEntry.cs" />
+    <Compile Include="TestAppForm.cs" />
+    <Compile Include="TestStateGlyphControl.cs" />
+    <Compile Include="UIGlyphCreater.cs" />
+    <Compile Include="UIGlyphGroupSelector.cs" />
+    <Compile Include="UIGlyphInteractionHandlerBase.cs" />
+    <Compile Include="UIGlyphKeyboardInputInteractor.cs" />
+    <Compile Include="UIGlyphMoveAndReparent.cs" />
+    <Compile Include="UISelectorBand.cs" />
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <EmbeddedResource Include="DrawingSurface.resx">
+      <DependentUpon>DrawingSurface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecutionControllerView.resx">
+      <DependentUpon>ExecutionControllerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlyphPropertyWindow.resx">
+      <DependentUpon>GlyphPropertyWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkCancelForm.resx">
+      <DependentUpon>OkCancelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessComponentFrameExecutionView.resx">
+      <DependentUpon>ProcessComponentFrameExecutionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QHsmExecutionControllerView.resx">
+      <DependentUpon>QHsmExecutionControllerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StateDiagramView.resx">
+      <DependentUpon>StateDiagramView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringEntry.resx">
+      <DependentUpon>StringEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppForm.resx">
+      <DependentUpon>TestAppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestStateGlyphControl.resx">
+      <DependentUpon>TestStateGlyphControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ProjectReference Include="..\LoggingUtil\LoggingUtil.csproj">
+      <Project>{D8E55FAD-D951-4ED5-BB56-34E24D85D207}</Project>
+      <Name>LoggingUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MurphyPA.H2D.Implementation\MurphyPA.H2D.Implementation.csproj">
+      <Project>{2A46D990-7E5D-4FDC-9939-A4197207B8C1}</Project>
+      <Name>MurphyPA.H2D.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MurphyPA.H2D.Interfaces\MurphyPA.H2D.Interfaces.csproj">
+      <Project>{5EDB4FCB-FE55-42B0-9B41-A7923F90028B}</Project>
+      <Name>MurphyPA.H2D.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdparty\HierarchicalStateMachine\src\qf4net.csproj">
+      <Project>{BBA3D39A-83D0-4745-997F-13687AFC5141}</Project>
+      <Name>qf4net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MurphyPA.H2D.QF4NetExtensions\MurphyPA.H2D.QF4NetExtensions.csproj">
+      <Project>{D72506A6-B055-46EC-A7F7-D3EB7A02EDAD}</Project>
+      <Name>MurphyPA.H2D.QF4NetExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
 </VisualStudioProject>
-

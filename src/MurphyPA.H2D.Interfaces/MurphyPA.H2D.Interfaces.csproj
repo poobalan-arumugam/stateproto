@@ -1,230 +1,107 @@
-<VisualStudioProject>
-    <CSHARP
-        ProjectType = "Local"
-        ProductVersion = "7.10.3077"
-        SchemaVersion = "2.0"
-        ProjectGuid = "{50A063AD-E7DD-425B-BC91-A040DA061A6F}"
-    >
-        <Build>
-            <Settings
-                ApplicationIcon = ""
-                AssemblyKeyContainerName = ""
-                AssemblyName = "MurphyPA.H2D.Interfaces"
-                AssemblyOriginatorKeyFile = ""
-                DefaultClientScript = "JScript"
-                DefaultHTMLPageLayout = "Grid"
-                DefaultTargetSchema = "IE50"
-                DelaySign = "false"
-                OutputType = "Library"
-                PreBuildEvent = ""
-                PostBuildEvent = ""
-                RootNamespace = "MurphyPA.H2D.Interfaces"
-                RunPostBuildEvent = "OnBuildSuccess"
-                StartupObject = ""
-            >
-                <Config
-                    Name = "Debug"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "DEBUG;TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "true"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "false"
-                    OutputPath = "..\..\..\..\..\..\bin\lib\stateproto\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-                <Config
-                    Name = "Release"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "false"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "true"
-                    OutputPath = "..\..\..\..\..\..\bin\lib\stateproto\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-            </Settings>
-            <References>
-                <Reference
-                    Name = "System"
-                    AssemblyName = "System"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
-                />
-                <Reference
-                    Name = "System.Data"
-                    AssemblyName = "System.Data"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
-                />
-                <Reference
-                    Name = "System.XML"
-                    AssemblyName = "System.Xml"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
-                />
-                <Reference
-                    Name = "System.Drawing"
-                    AssemblyName = "System.Drawing"
-                    HintPath = "E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
-                />
-            </References>
-        </Build>
-        <Files>
-            <Include>
-                <File
-                    RelPath = "AssemblyInfo.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "DirectionalGlyphAttribute.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "GraphicsStatePop.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IComponentGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ICompositeGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IDrawStringContext.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IGlyphFactory.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IGlyphVisitor.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IGraphicsContext.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IGroupGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IOperationContactPointGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IOperationGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IOperationPortGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IOperationPortLinkContactPointGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IOperationPortLinkGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IPortLinkContactPointGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IPortLinkGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IStateGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "IStateTransitionPortGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ITransitionContactPointGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ITransitionGlyph.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "OffsetChangedHandler.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "OffsetEventArgs.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "PointCollection.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "TransitionContactEnd.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "TransitionType.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-            </Include>
-        </Files>
-    </CSHARP>
+<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ToolsVersion="4.0">
+  <CSHARP ProjectType="Local" ProductVersion="7.10.3077" SchemaVersion="2.0" ProjectGuid="{50A063AD-E7DD-425B-BC91-A040DA061A6F}">
+    <Build>
+      <Settings ApplicationIcon="" AssemblyKeyContainerName="" AssemblyName="MurphyPA.H2D.Interfaces" AssemblyOriginatorKeyFile="" DefaultClientScript="JScript" DefaultHTMLPageLayout="Grid" DefaultTargetSchema="IE50" DelaySign="false" OutputType="Library" PreBuildEvent="" PostBuildEvent="" RootNamespace="MurphyPA.H2D.Interfaces" RunPostBuildEvent="OnBuildSuccess" StartupObject="">
+        <Config Name="Debug" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="DEBUG;TRACE" DocumentationFile="" DebugSymbols="true" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="false" OutputPath="..\..\..\..\..\..\bin\lib\stateproto\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+        <Config Name="Release" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="TRACE" DocumentationFile="" DebugSymbols="false" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="true" OutputPath="..\..\..\..\..\..\bin\lib\stateproto\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+      </Settings>
+      <References>
+        <Reference Name="System" AssemblyName="System" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll" />
+        <Reference Name="System.Data" AssemblyName="System.Data" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll" />
+        <Reference Name="System.XML" AssemblyName="System.Xml" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll" />
+        <Reference Name="System.Drawing" AssemblyName="System.Drawing" HintPath="E:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll" />
+      </References>
+    </Build>
+    <Files>
+      <Include>
+        <File RelPath="AssemblyInfo.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="DirectionalGlyphAttribute.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="GraphicsStatePop.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IComponentGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ICompositeGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IDrawStringContext.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IGlyphFactory.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IGlyphVisitor.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IGraphicsContext.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IGroupGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IOperationContactPointGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IOperationGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IOperationPortGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IOperationPortLinkContactPointGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IOperationPortLinkGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IPortLinkContactPointGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IPortLinkGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IStateGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="IStateTransitionPortGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ITransitionContactPointGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="ITransitionGlyph.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="OffsetChangedHandler.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="OffsetEventArgs.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="PointCollection.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="TransitionContactEnd.cs" SubType="Code" BuildAction="Compile" />
+        <File RelPath="TransitionType.cs" SubType="Code" BuildAction="Compile" />
+      </Include>
+    </Files>
+  </CSHARP>
+  <PropertyGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5EDB4FCB-FE55-42B0-9B41-A7923F90028B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MurphyPA.H2D.Interfaces</RootNamespace>
+    <AssemblyName>MurphyPA.H2D.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunWithWarnings>false</RunWithWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunWithWarnings>false</RunWithWarnings>
+  </PropertyGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="DirectionalGlyphAttribute.cs" />
+    <Compile Include="GraphicsStatePop.cs" />
+    <Compile Include="IComponentGlyph.cs" />
+    <Compile Include="ICompositeGlyph.cs" />
+    <Compile Include="IDrawStringContext.cs" />
+    <Compile Include="IGlyph.cs" />
+    <Compile Include="IGlyphFactory.cs" />
+    <Compile Include="IGlyphVisitor.cs" />
+    <Compile Include="IGraphicsContext.cs" />
+    <Compile Include="IGroupGlyph.cs" />
+    <Compile Include="IOperationContactPointGlyph.cs" />
+    <Compile Include="IOperationGlyph.cs" />
+    <Compile Include="IOperationPortGlyph.cs" />
+    <Compile Include="IOperationPortLinkContactPointGlyph.cs" />
+    <Compile Include="IOperationPortLinkGlyph.cs" />
+    <Compile Include="IPortLinkContactPointGlyph.cs" />
+    <Compile Include="IPortLinkGlyph.cs" />
+    <Compile Include="IStateGlyph.cs" />
+    <Compile Include="IStateTransitionPortGlyph.cs" />
+    <Compile Include="ITransitionContactPointGlyph.cs" />
+    <Compile Include="ITransitionGlyph.cs" />
+    <Compile Include="OffsetChangedHandler.cs" />
+    <Compile Include="OffsetEventArgs.cs" />
+    <Compile Include="PointCollection.cs" />
+    <Compile Include="TransitionContactEnd.cs" />
+    <Compile Include="TransitionType.cs" />
+  </ItemGroup>
+  <ItemGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
 </VisualStudioProject>
-
