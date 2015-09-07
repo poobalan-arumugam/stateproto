@@ -104,6 +104,14 @@ namespace MurphyPA.H2D.Implementation
 			{
 				return; // no line here
 			}
+
+			// vertical line -- outofmemory issue under Mono
+			// workaround - do not draw
+			if (Math.Abs(from.X - to.X) < 10)
+			{
+				return;
+			}
+
 			using (Brush brush = new System.Drawing.Drawing2D.LinearGradientBrush (from, to, fromColor, toColor))
 			{
 				using (Pen pen = new Pen (brush, thickness))
