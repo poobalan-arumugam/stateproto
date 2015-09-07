@@ -705,7 +705,7 @@ namespace MurphyPA.H2D.TestApp
 			{
 				_InteractionHandler.MouseDown (sender, e);
 			}
-			Refresh ();
+			RefreshView ();
 		}
 
 		private void TestStateGlyphForm_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -745,7 +745,7 @@ namespace MurphyPA.H2D.TestApp
 			{
 				ClearModel ();
 				ShowHeader ();
-				Refresh ();
+				RefreshView ();
 			}
 		}
 
@@ -757,7 +757,7 @@ namespace MurphyPA.H2D.TestApp
 			}
 
 			_Model.DeleteSelectedGlyphs ();
-			Refresh ();
+			RefreshView ();
 		}
 
 		public void PaintDrawingArea (PaintEventArgs args)
@@ -871,6 +871,7 @@ namespace MurphyPA.H2D.TestApp
 		public void RefreshView ()
 		{
 			Refresh ();
+			drawingPanel.Refresh ();
 		}
 
 		private void drawingPanel_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
@@ -879,7 +880,7 @@ namespace MurphyPA.H2D.TestApp
 			{
 				deleteButton_Click (sender, e);
 			}
-			else if (e.KeyCode == Keys.Oemplus)
+			else if (e.KeyCode == Keys.Oemplus || e.KeyCode == Keys.Add)
 			{
                 bool isAlt = (e.Modifiers & Keys.Alt) == Keys.Alt;
                 if (isAlt) // scale
@@ -895,7 +896,7 @@ namespace MurphyPA.H2D.TestApp
                 }
 
             }
-			else if (e.KeyCode == Keys.OemMinus)
+			else if (e.KeyCode == Keys.OemMinus || e.KeyCode == Keys.Subtract)
 			{
                 bool isAlt = (e.Modifiers & Keys.Alt) == Keys.Alt;
                 if (isAlt) // scale
@@ -930,6 +931,7 @@ namespace MurphyPA.H2D.TestApp
 					_InteractionHandler.KeyUp (sender, e);
 				}
 			}
+			RefreshView ();
 		}
 
 		protected bool IsControlKey (KeyEventArgs e, Keys key)
@@ -996,6 +998,7 @@ namespace MurphyPA.H2D.TestApp
 		public void RefreshView (object sender, EventArgs e)
 		{
 			Refresh ();
+			drawingPanel.Refresh ();
 		}
 
         private void modelElementButton_Click(object sender, System.EventArgs e)
@@ -1005,6 +1008,7 @@ namespace MurphyPA.H2D.TestApp
             System.Diagnostics.Debug.Assert (button.Tag is string, "Model Element buttons must have tag assigned to the Method Name of the Glyph Factory to use");
             string modelElementMethod = button.Tag as string;
             setModelElement (modelElementMethod);
+			RefreshView ();
         }
 	    
 		private void setModelElement(string modelElementMethod)
@@ -1038,6 +1042,7 @@ namespace MurphyPA.H2D.TestApp
 		{
 			_InteractionHandler = new UIGlyphGroupSelector (this);
 			UnselectElementRadioButtons ();		
+			RefreshView ();
 		}
 
 		private void moveButton_Click(object sender, System.EventArgs e)
