@@ -1,0 +1,21 @@
+Hierarchical 2-D Drawings
+
+Load Development\MurphyPA\Modelling\H2D\src\H2D.sln and build.
+
+All projects make assembly references only and build to 
+
+TOPLEVELDIR\bin\
+TOPLEVELDIR\bin\lib\common
+TOPLEVELDIR\bin\lib\stateproto
+TOPLEVELDIR\bin\lib\qf4net
+
+where TOPLEVELDIR is probably OSS
+
+
+Note that the qf4net in this folder structure is the modified qf4net.
+
+Questions to murphypa [at] iterativeideas [.] com
+
+
+
+
