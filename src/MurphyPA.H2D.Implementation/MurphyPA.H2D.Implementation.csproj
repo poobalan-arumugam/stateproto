@@ -57,13 +57,13 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\stateproto\debug\bin\lib\stateproto\</OutputPath>
     <WarningLevel>4</WarningLevel>
     <RunWithWarnings>false</RunWithWarnings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\bin\lib\stateproto\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\stateproto\release\bin\lib\stateproto\</OutputPath>
     <WarningLevel>4</WarningLevel>
     <RunWithWarnings>false</RunWithWarnings>
   </PropertyGroup>
