@@ -1,0 +1,88 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EC09CB13-D45E-4B55-8CBF-088042A6645B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qf4net", "src\qf4net.csproj", "{068CD5CC-1000-430B-A575-A1E5644EDFD3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QHsmTest", "Examples\QHsmTest\QHsmTest.csproj", "{C4DC0A10-0918-4B73-9F2C-B7F4A17110BF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimizationBreaker", "Examples\OptimizationBreaker\OptimizationBreaker.csproj", "{077851B1-95B7-4FCA-9CA8-256BEC512D1C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorHSM", "Examples\CalculatorHSM\CalculatorHSM.csproj", "{DA9CE249-A93C-41E5-A22A-3F2D18A2B43C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReminderPattern", "Examples\ReminderPattern\ReminderPattern.csproj", "{F2DF4102-828E-4E77-9001-16B3FE81843C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RtcWithLoopBreakout", "Examples\RunToCompletion\RtcWithLoopBreakout.csproj", "{86F03AD4-EE90-469B-A445-6E110D6B3785}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiningPhilosophers", "Examples\DiningPhilosophers\DiningPhilosophers.csproj", "{E62997C7-D539-46DD-A912-FD46EA5CEE46}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrthogonalComponent", "Examples\OrthogonalComponent\OrthogonalComponent.csproj", "{A1B506E3-CBB9-4CFF-9553-8F6899A222C9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EC09CB13-D45E-4B55-8CBF-088042A6645B}.Debug.ActiveCfg = Debug|.NET
+		{EC09CB13-D45E-4B55-8CBF-088042A6645B}.Debug.Build.0 = Debug|.NET
+		{EC09CB13-D45E-4B55-8CBF-088042A6645B}.Release.ActiveCfg = Release|.NET
+		{EC09CB13-D45E-4B55-8CBF-088042A6645B}.Release.Build.0 = Release|.NET
+		{068CD5CC-1000-430B-A575-A1E5644EDFD3}.Debug.ActiveCfg = Debug|.NET
+		{068CD5CC-1000-430B-A575-A1E5644EDFD3}.Debug.Build.0 = Debug|.NET
+		{068CD5CC-1000-430B-A575-A1E5644EDFD3}.Release.ActiveCfg = Release|.NET
+		{068CD5CC-1000-430B-A575-A1E5644EDFD3}.Release.Build.0 = Release|.NET
+		{C4DC0A10-0918-4B73-9F2C-B7F4A17110BF}.Debug.ActiveCfg = Debug|.NET
+		{C4DC0A10-0918-4B73-9F2C-B7F4A17110BF}.Debug.Build.0 = Debug|.NET
+		{C4DC0A10-0918-4B73-9F2C-B7F4A17110BF}.Release.ActiveCfg = Release|.NET
+		{C4DC0A10-0918-4B73-9F2C-B7F4A17110BF}.Release.Build.0 = Release|.NET
+		{077851B1-95B7-4FCA-9CA8-256BEC512D1C}.Debug.ActiveCfg = Debug|.NET
+		{077851B1-95B7-4FCA-9CA8-256BEC512D1C}.Debug.Build.0 = Debug|.NET
+		{077851B1-95B7-4FCA-9CA8-256BEC512D1C}.Release.ActiveCfg = Release|.NET
+		{077851B1-95B7-4FCA-9CA8-256BEC512D1C}.Release.Build.0 = Release|.NET
+		{DA9CE249-A93C-41E5-A22A-3F2D18A2B43C}.Debug.ActiveCfg = Debug|.NET
+		{DA9CE249-A93C-41E5-A22A-3F2D18A2B43C}.Debug.Build.0 = Debug|.NET
+		{DA9CE249-A93C-41E5-A22A-3F2D18A2B43C}.Release.ActiveCfg = Release|.NET
+		{DA9CE249-A93C-41E5-A22A-3F2D18A2B43C}.Release.Build.0 = Release|.NET
+		{F2DF4102-828E-4E77-9001-16B3FE81843C}.Debug.ActiveCfg = Debug|.NET
+		{F2DF4102-828E-4E77-9001-16B3FE81843C}.Debug.Build.0 = Debug|.NET
+		{F2DF4102-828E-4E77-9001-16B3FE81843C}.Release.ActiveCfg = Release|.NET
+		{F2DF4102-828E-4E77-9001-16B3FE81843C}.Release.Build.0 = Release|.NET
+		{86F03AD4-EE90-469B-A445-6E110D6B3785}.Debug.ActiveCfg = Debug|.NET
+		{86F03AD4-EE90-469B-A445-6E110D6B3785}.Debug.Build.0 = Debug|.NET
+		{86F03AD4-EE90-469B-A445-6E110D6B3785}.Release.ActiveCfg = Release|.NET
+		{86F03AD4-EE90-469B-A445-6E110D6B3785}.Release.Build.0 = Release|.NET
+		{E62997C7-D539-46DD-A912-FD46EA5CEE46}.Debug.ActiveCfg = Debug|.NET
+		{E62997C7-D539-46DD-A912-FD46EA5CEE46}.Debug.Build.0 = Debug|.NET
+		{E62997C7-D539-46DD-A912-FD46EA5CEE46}.Release.ActiveCfg = Release|.NET
+		{E62997C7-D539-46DD-A912-FD46EA5CEE46}.Release.Build.0 = Release|.NET
+		{A1B506E3-CBB9-4CFF-9553-8F6899A222C9}.Debug.ActiveCfg = Debug|.NET
+		{A1B506E3-CBB9-4CFF-9553-8F6899A222C9}.Debug.Build.0 = Debug|.NET
+		{A1B506E3-CBB9-4CFF-9553-8F6899A222C9}.Release.ActiveCfg = Release|.NET
+		{A1B506E3-CBB9-4CFF-9553-8F6899A222C9}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		VersionHistory.html = VersionHistory.html
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
