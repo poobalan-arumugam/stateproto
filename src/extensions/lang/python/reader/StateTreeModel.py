@@ -1,6 +1,6 @@
-from parseStateProtoFile import *
+from .parseStateProtoFile import *
 
-class StateTreeNode:
+class StateTreeNode(Base):
     def __init__(self, parentNode, state):
         self._parentNode = parentNode
         self._state = state
@@ -19,6 +19,21 @@ class StateTreeNode:
         childTreeNode = StateTreeNode(self, child)
         self._childNodes.append(childTreeNode)
         return childTreeNode
+
+    def has_children(self):
+        return len(self._childNodes) > 0
+
+    def findNodeForState(self, guid):
+        def finder(node, guid):
+            if node.state().guid == guid:
+                return node
+            for child in node._childNodes:
+                value = finder(child, guid)
+                if value:
+                    return value
+            return None
+
+        return finder(self, guid)
 
     def do(self, action, arg):
         for stateNode in self._childNodes:

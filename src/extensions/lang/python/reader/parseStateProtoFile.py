@@ -1,9 +1,111 @@
-class Header:
+from __future__ import print_function
+
+from io import StringIO
+
+class PrintStream(object):
+    def __init__(self):
+        self._io = StringIO.StringIO()
+        self._indent = 0
+        self.resetIndent()
+    def writeItem(self, item):
+        self.beginWriteItem()
+        try:
+            self.writeItemName(item.__class__.__name__)
+            self.write("(\n")
+            self.beginWriteItem()
+            skipAttributesNamed = {}
+            if hasattr(item, "_skipAttributesNamed"):
+                skipAttributesNamed = item._skipAttributesNamed()
+            try:
+                for name, value in item.__dict__.items():
+                    if not name in skipAttributesNamed:
+                        self.writeItemAttribute(name, value)
+            finally:
+                self.endWriteItem()
+                self.write(") // " + item.__class__.__name__ + "\n")
+        finally:
+            self.endWriteItem()
+
+    def beginWriteItem(self):
+        self._indent += 1
+        self.notifyIndentationChanged()
+
+    def endWriteItem(self):
+        self._indent -= 1
+        self.notifyIndentationChanged()
+
+    def writeItemName(self, name):
+        self.write(name + "\n")
+
+    def writeList(self, lst):
+        self.beginWriteItem()
+        counter = 0
+        self.write("Count: %s\n" % (len(lst),))
+        self.write("[\n");
+        self.beginWriteItem()
+        for item in lst:
+            self.writeItemAttribute("%s: " % (counter,), item)
+            counter += 1
+        self.endWriteItem()
+        self.write("]\n");
+        self.endWriteItem()
+
+    def writeItemAttribute(self, name, value):
+        if hasattr(value, "_toStream"):
+            self.write("%s {\n" % (name,))
+            self.beginWriteItem()
+            value._toStream(self)
+            self.endWriteItem()
+            self.write("}; // %s\n" % (name,))
+        else:
+            self.write("%s = %s;\n" % (name, value,))
+
+    def resetIndent(self):
+        self.notifyIndentationChanged()
+
+    def notifyIndentationChanged(self):
+        self._indentLine = None
+
+    def indentAsLine(self):
+        if self._indentLine == None:
+            self._indentLine = " " * (4 * self._indent)
+        return self._indentLine
+
+    def writeRaw(self, value):
+        self._io.write(value)
+
+    def write(self, value):
+        self._io.write(self.indentAsLine())
+        self.writeRaw(value)
+
+    def __repr__(self):
+        return self._io.getvalue()
+
+class Base(object):
+    def __init__(self, dict):
+        self.__dict__.update(dict)
+
+    def _makePrintStream(self):
+        return PrintStream()
+
+    def _skipAttributesNamed(self):
+        return {"self":""}
+
+    def _toStream(self, stream):
+        stream.writeItem(self)
+
+    def __repr__(self):
+        printStream = self._makePrintStream()
+        self._toStream(printStream)
+        return repr(printStream)
+    pass
+
+class Header(Base):
     def __init__(self, dict):
         self.__dict__.update(dict)
     pass
     
-class State:
+class State(Base):
     def __init__(self, dict):
         self.__dict__.update(dict)
     pass
@@ -12,7 +114,7 @@ class State:
     pass
     
 
-class Transition:
+class Transition(Base):
     def __init__(self, dict):
         self.__dict__.update(dict)
     pass
@@ -20,7 +122,7 @@ class Transition:
         return visitor.visitTransition(self, arg)
     pass
 
-class StateTransitionPort:
+class StateTransitionPort(Base):
     def __init__(self, dict):
         self.__dict__.update(dict)
     pass
@@ -29,26 +131,29 @@ class StateTransitionPort:
     pass
     
 
-class Parser:
+class Parser(Base):
     C_EXPECTING_BEGIN = "EXPECTING_BEGIN"
     C_EXPECTING_END   = "EXPECTED_END"
     
     def __init__(self, fileName):
         self._FileName = fileName
-        import Queue
-        self._inputQueue = Queue.Queue()
+        try:
+            import queue
+        except:
+            import Queue as queue
+        self._inputQueue = queue.Queue()
 
     def parse(self):
         try:
             return self._parse_i()
-        except IOError, ioex:
+        except IOError as ioex:
             import traceback
             traceback.print_exc()
             raise
-        except Exception, ex:
+        except Exception as ex:
             import traceback
             traceback.print_exc()
-            print "Line:", self._LineNumber, " #", ex
+            print ("Line:", self._LineNumber, " #", ex)
             raise
         pass
         return None
@@ -59,7 +164,7 @@ class Parser:
         headerdict = self._parseHeader()
         header = Header(headerdict)
         count = self._parseCount()
-        for index in xrange(count):
+        for index in range(count):
             what = self._readLine()
             if what == "STATE:":
                 statedict = self._parseState()
@@ -96,7 +201,7 @@ class Parser:
         return locals()
 
     def _parseCount(self):
-        count = int(self._reader.next())
+        count = int(next(self._reader))
         return count
 
     def _parseState(self):
@@ -110,7 +215,9 @@ class Parser:
         donotinstrument = self._readBlock ("DEBUG_DONOTINSTRUMENT", str(False));
         name = self._readBlock("NAME")
         isstartstate = self._readBlock("ISSTARTSTATE")
+        assert isstartstate in ["True", "False"]
         isfinalstate = self._readBlock("ISFINALSTATE", str(False))
+        assert isfinalstate in ["True", "False"]
         entry = self._readBlock("ENTRY")
         exit = self._readBlock("EXIT")
         do = self._readBlock("DO")
@@ -137,6 +244,7 @@ class Parser:
         eventtype = self._readBlock("EVENTTYPE", "")
         evaluationorderpriority = self._readBlock("EVALUATIONORDERPRIORITY")
         other = self._readLine()
+        isInternalTransition = other == "True"
         timeoutexpression = self._readBlock("TIMEOUTEXPRESSION")
         return locals()
 
@@ -176,7 +284,7 @@ class Parser:
         if not self._inputQueue.empty():
             return self._inputQueue.get()
         pass
-        return self._reader.next()
+        return next(self._reader)
 
     def _pushBack(self, line):
         self._inputQueue.put(line)
@@ -227,7 +335,7 @@ class IsTypeVisitor:
     def visitStateTransitionPort(self, item, arg):
         return self._ExpectedTypeString == "STATETRANSITIONPORT"
 
-class ListOps:
+class ListOps(Base):
     def __init__(self, list):
         self._list = list
         
@@ -254,9 +362,14 @@ class ListOps:
             func(item, arg)
         pass
 
-class ParsedModel:
+    def _toStream(self, stream):
+        stream.write(self.__class__.__name__ + " {\n")
+        stream.writeList(self._list)
+        stream.write(" } //" + self.__class__.__name__  + "\n")
+
+class ParsedModel(Base):
     def __init__(self, sm1FileName):
-        self._NOPARENTSTATE = State({"name": "TOPSTATE", "guid": "NOPARENT", "entry": None, "exit": None, "left":0, "top":0, "width":2, "height": 2})
+        self._NOPARENTSTATE = State({"name": "TOPSTATE", "guid": "NOPARENT", "entry": None, "exit": None, "isstartstate": None, "left":0, "top":0, "width":2, "height": 2})
 
         parser = Parser(sm1FileName)
         self._header, self._list = parser.parse()
@@ -311,13 +424,17 @@ class ParsedModel:
     def statetransitionportList(self):
         return self._statetransitionports
 
+    def stateTreeRoot(self):
+        return self._stateTree
+
     def _buildStateTree(self):
-        import StateTreeModel
+        from . import StateTreeModel
         self._stateTree = StateTreeModel.buildStateTree(self)
         pass        
 
     def _updateDefaultStartState(self):
         def updateState(stateNode, arg):
+            assert stateNode.state().isstartstate in ["True", "False"]
             if stateNode.state().isstartstate == "True":
                 arg.defaultStartState = stateNode.state()
             pass
@@ -329,6 +446,7 @@ class ParsedModel:
         def updateState(stateNode, arg):
             stateNode.state().childStartStateName = None
             stateNode.do(updateState, stateNode.state())
+            assert stateNode.state().isstartstate in ["True", "False"]
             if stateNode.state().isstartstate == "True":
                 arg.childStartStateName = stateNode.state().name
             pass
@@ -343,7 +461,7 @@ class ParsedModel:
                 return sv
             def processTransitions(transition, perSignal):
                 key = getQualifiedEvent(transition)
-                if not perSignal.has_key(key):
+                if not key in perSignal:
                     perSignal[key] = []
                 perSignal[key].append(transition)
                 pass
@@ -352,16 +470,16 @@ class ParsedModel:
             perSignalGroupedInArray = {}
             list.do(processTransitions, perSignalGroupedInArray)
             
-            def guardedAheadOfNonGuarded(transition1, transition2):
-                if transition1.guard == transition2.guard:
-                    return 0
-                if transition2.guard == None:
-                    return -1                
-                return 1
+            def nonGuardedAheadOfGuarded_key(transition):
+                if transition.guard is None:
+                    return ""
+                assert isinstance(transition.guard, str), transition.guard
+                return transition.guard
             
             groupedTransitionList = []
             for key, value in perSignalGroupedInArray.items():
-                value.sort(guardedAheadOfNonGuarded)
+                value.sort(key=nonGuardedAheadOfGuarded_key,
+                           reverse=True)
                 transitionGroup = ListOps(value)
                 transitionGroup.firstTransition = value[0]
                 groupedTransitionList.append(transitionGroup)
@@ -375,16 +493,26 @@ class ParsedModel:
         
 
 
-class GenericPrintVisitor:
+class GenericPrintVisitor(Base):
     def __init__(self, parsedModel):
         self._parsedModel = parsedModel
         
+    def isPrintToConsoleOn(self):
+        return True
+
     def visitState(self, item, arg):
-        print "S:", item.name, self._parsedModel.ByGuid(item.parent).name, item.entry, item.exit
+        if self.isPrintToConsoleOn():
+            print ("S:", item.name,
+                   self._parsedModel.ByGuid(item.parent).name,
+                   item.entry, item.exit)
         pass
     def visitTransition(self, item, arg):
-        print "T:", self._parsedModel.ByGuid(item.fromstate).name, " -> ", item.event, " [ ", item.guard, "] / ", item.action, " -> ", self._parsedModel.ByGuid(item.tostate).name
+        if self.isPrintToConsoleOn():
+            print ("T:", self._parsedModel.ByGuid(item.fromstate).name,
+                   " -> ", item.event, " [ ", item.guard, "] / ", item.action,
+                   " -> ", self._parsedModel.ByGuid(item.tostate).name)
         pass
     def visitStateTransitionPort(self, item, arg):
-        print "P:", item.name
+        if self.isPrintToConsoleOn():
+            print ("P:", item.name)
         pass
