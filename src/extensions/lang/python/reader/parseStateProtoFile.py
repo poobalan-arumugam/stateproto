@@ -1,10 +1,10 @@
 from __future__ import print_function
 
-from io import StringIO
+import io
 
 class PrintStream(object):
     def __init__(self):
-        self._io = StringIO.StringIO()
+        self._io = io.StringIO()
         self._indent = 0
         self.resetIndent()
     def writeItem(self, item):
