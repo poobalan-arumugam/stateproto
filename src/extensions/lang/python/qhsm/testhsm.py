@@ -1,5 +1,8 @@
+from __future__ import print_function
+
 #TestHsm
-from qhsm import *
+
+from .qhsm import QHsm, QSignals, QEvent
 
 class TestHsm (QHsm):
     def __init__(self):
@@ -7,44 +10,44 @@ class TestHsm (QHsm):
         pass
     def initialiseStateMachine(self):
         self.initialiseState(self.stateX)
-        print "initialise"
+        print("initialise")
         pass
     def stateX(self, ev):
         if ev.QSignal == QSignals.Init:
-            print "stateX::", ev
+            print("stateX::", ev)
             self.initialiseState(self.state0)
             return None
-        print "otherwise stateX", ev
+        print("otherwise stateX", ev)
         return self._TopState
                                 
     def state0(self, ev):
         if ev.QSignal == "Hello":
-            print "state0::", ev
+            print("state0::", ev)
             self.transitionTo(self.state1)
             return None
-        print "otherwise state0", ev
+        print("otherwise state0", ev)
         return self.stateX
     
     def state1(self, ev):
         if ev.QSignal == "Hello":
-            print "state1::", ev
+            print("state1::", ev)
             self.transitionTo(self.state0)
             return None
-        print "otherwise state1", ev
+        print("otherwise state1", ev)
         return self._TopState
 
 def printCurrentStateName(hsm):
-    print "Get currentStateName"
+    print("Get currentStateName")
     currentStateName = hsm.currentStateName()
-    print "CurrentStateName:", currentStateName    
+    print("CurrentStateName:", currentStateName)
 
 def test():
     t = TestHsm()
     t.init()
     printCurrentStateName(t)
-    t.dispatch(QEvent("Hello"))
+    t.dispatch(QEvent("Default", "Hello"))
     printCurrentStateName(t)
-    t.dispatch(QEvent("Hello"))
+    t.dispatch(QEvent("Default", "Hello"))
     printCurrentStateName(t)
 
 

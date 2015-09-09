@@ -12,7 +12,7 @@ pass
 # -- define qevent
 
 class QEvent:    
-    def __init__(self, source, signal, data):
+    def __init__(self, source, signal, data = None):
         self.QSource = source
         self.QSignal = signal
         self.QData = data
@@ -23,10 +23,10 @@ pass
 
 
 def QEventFromSignal(signal):
-    return QEvent(None, signal, None)
+    return QEvent("_Internal_", signal, None)
 
 def QEventFromSignalAndData(signal, data):
-    return QEvent(None, signal, data)
+    return QEvent("_Internal_", signal, data)
 
 def QEventFromSourceAndSignalAndData(source, signal, data):
     return QEvent(source, signal, data)
@@ -122,7 +122,7 @@ class QHsm:
         while state != self._TopState:
             name.insert(0, state.__name__)
             state = self.getSuperState(state)
-        name = string.join(name, ".")
+        name = ".".join(name)
         return name
     
     def transitionFromSourceStateToTargetState(self, targetState):
@@ -183,7 +183,7 @@ class QHsm:
         #     super state of super state of ... target state
         # The array list is currently filled with all the states
         # from the target state up to the top state
-        for stateIndex in xrange(holder.indexFirstStateToEnter, -1, -1):
+        for stateIndex in range(holder.indexFirstStateToEnter, -1, -1):
             if sourceSuperState == holder.statesTargetToLCA[stateIndex]:
                 holder.indexFirstStateToEnter = stateIndex - 1
                 # Note that we do not include the LCA state itself
@@ -195,7 +195,7 @@ class QHsm:
         #     super state of super state of ... target state
         state = sourceSuperState
         while state != None:
-            for stateIndex in xrange(holder.indexFirstStateToEnter, -1, -1):
+            for stateIndex in range(holder.indexFirstStateToEnter, -1, -1):
                 if (state == holder.statesTargetToLCA[stateIndex]):
                     holder.indexFirstStateToEnter = stateIndex - 1
                     # Note that we do not include the LCA state itself
@@ -216,7 +216,7 @@ class QHsm:
         indexFirstStateToEnter):
 
         # we enter the states in the passed in array in reverse order
-        for stateIndex in xrange(indexFirstStateToEnter, -1, -1):
+        for stateIndex in range(indexFirstStateToEnter, -1, -1):
             self.trigger(statesTargetToLCA[stateIndex], QSignalsEvents.Entry)
             pass
         
