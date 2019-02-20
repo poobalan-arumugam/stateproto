@@ -44,7 +44,8 @@ def walkStateTree(rootNode, arg):
 
 if __name__ == "__main__":
     fileList = ["phoneSim1.sm1",
-        r"../../../../../../statemachines/samples/pingpong/pingpong.sm1"]
+                "../../../../../../statemachines/samples/pingpong/pingpong.sm1",
+                "testsample1.sm1"]
     parsedModel = ParsedModel(fileList[-1])
 
     def simplePrintFunction(item, arg):
