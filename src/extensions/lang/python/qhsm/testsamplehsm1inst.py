@@ -28,12 +28,12 @@ class TestSample1Impl(testsamplehsm1.TestSample1):
         print "Hello3"
     def Ok(self, ev):
         return ev.QData
-    
+
 
 def printCurrentStateName(hsm):
     print "Get currentStateName"
     currentStateName = hsm.currentStateName()
-    print "CurrentStateName:", currentStateName    
+    print "CurrentStateName:", currentStateName
 
 def test():
     t = TestSample1Impl()

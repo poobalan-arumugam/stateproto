@@ -104,7 +104,7 @@ class Header(Base):
     def __init__(self, dict):
         self.__dict__.update(dict)
     pass
-    
+
 class State(Base):
     def __init__(self, dict):
         self.__dict__.update(dict)
@@ -112,7 +112,7 @@ class State(Base):
     def accept(self, visitor, arg):
         return visitor.visitState(self, arg)
     pass
-    
+
 
 class Transition(Base):
     def __init__(self, dict):
@@ -129,12 +129,12 @@ class StateTransitionPort(Base):
     def accept(self, visitor, arg):
         return visitor.visitStateTransitionPort(self, arg)
     pass
-    
+
 
 class Parser(Base):
     C_EXPECTING_BEGIN = "EXPECTING_BEGIN"
     C_EXPECTING_END   = "EXPECTED_END"
-    
+
     def __init__(self, fileName):
         self._FileName = fileName
         try:
@@ -157,7 +157,7 @@ class Parser(Base):
             raise
         pass
         return None
-    
+
     def _parse_i(self):
         self._reader = self._openStateProtoFile(self._FileName)
         list = []
@@ -257,8 +257,8 @@ class Parser(Base):
         note = self._readBlock("NOTE:")
         donotinstrument = self._readBlock ("DEBUG_DONOTINSTRUMENT", str(False));
         name = self._readBlock("NAME")
-        return locals()        
-    
+        return locals()
+
     def _openStateProtoFile(self, fileName):
         hFile = open(fileName, "r")
         self._LineNumber = 0
@@ -288,7 +288,7 @@ class Parser(Base):
 
     def _pushBack(self, line):
         self._inputQueue.put(line)
-    
+
     def _readBlock(self, expectedName, defaultValue = None):
         mode = self.C_EXPECTING_BEGIN
         blockContent = None
@@ -301,14 +301,14 @@ class Parser(Base):
                 pass
 
                 begin, name = line.split()
-                
+
                 mode = self.C_EXPECTING_END
                 self._assert(begin == "BEGIN", "BEGIN")
                 self._assert(expectedName == name, "Start of Block name %s different to expected block name %s" % (name, expectedName,))
             elif mode == self.C_EXPECTING_END:
                 if line.startswith("END "):
                     end, name = line.split()
-                    self._assert(end == "END", "END")                
+                    self._assert(end == "END", "END")
                     self._assert(expectedName == name, "End of Block name %s different to expected block name %s" % (name, expectedName,))
                     return blockContent
                 else:
@@ -319,13 +319,13 @@ class Parser(Base):
                     pass
                 pass
             pass
-        
+
         return None
 
 class IsTypeVisitor:
     def __init__(self, expectedTypeString):
         self._ExpectedTypeString = expectedTypeString
-        
+
     def visitState(self, item, arg):
         return self._ExpectedTypeString == "STATE"
 
@@ -338,7 +338,7 @@ class IsTypeVisitor:
 class ListOps(Base):
     def __init__(self, list):
         self._list = list
-        
+
     def collect(self, func, arg):
         result = [func(item, arg) for item in self._list]
         return ListOps(results)
@@ -388,7 +388,7 @@ class ParsedModel(Base):
     def NoParentState(self):
         return self._NOPARENTSTATE
 
-    def _collectByGuid(self):        
+    def _collectByGuid(self):
         self._byguid = {}
         self._byguid["NOPARENT"] = self._NOPARENTSTATE
         for item in self._list:
@@ -430,7 +430,7 @@ class ParsedModel(Base):
     def _buildStateTree(self):
         from . import StateTreeModel
         self._stateTree = StateTreeModel.buildStateTree(self)
-        pass        
+        pass
 
     def _updateDefaultStartState(self):
         def updateState(stateNode, arg):
@@ -438,7 +438,7 @@ class ParsedModel(Base):
             if stateNode.state().isstartstate == "True":
                 arg.defaultStartState = stateNode.state()
             pass
-        
+
         self._stateTree.do(updateState, self)
         pass
 
@@ -450,7 +450,7 @@ class ParsedModel(Base):
             if stateNode.state().isstartstate == "True":
                 arg.childStartStateName = stateNode.state().name
             pass
-        
+
         self._stateTree.do(updateState, self._stateTree.state())
         pass
 
@@ -465,17 +465,17 @@ class ParsedModel(Base):
                     perSignal[key] = []
                 perSignal[key].append(transition)
                 pass
-            
+
             list = self.transitionList().accept(lambda item, arg: item.fromstate == state.guid, None)
             perSignalGroupedInArray = {}
             list.do(processTransitions, perSignalGroupedInArray)
-            
+
             def nonGuardedAheadOfGuarded_key(transition):
                 if transition.guard is None:
                     return ""
                 assert isinstance(transition.guard, str), transition.guard
                 return transition.guard
-            
+
             groupedTransitionList = []
             for key, value in perSignalGroupedInArray.items():
                 value.sort(key=nonGuardedAheadOfGuarded_key,
@@ -486,17 +486,17 @@ class ParsedModel(Base):
                 pass
             state.groupedTransitionList = ListOps(groupedTransitionList)
             pass
-        
+
         self.stateList().do(processState, None)
         pass
-    
-        
+
+
 
 
 class GenericPrintVisitor(Base):
     def __init__(self, parsedModel):
         self._parsedModel = parsedModel
-        
+
     def isPrintToConsoleOn(self):
         return True
 

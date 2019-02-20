@@ -11,7 +11,7 @@ pass
 
 # -- define qevent
 
-class QEvent:    
+class QEvent:
     def __init__(self, source, signal, data = None):
         self.QSource = source
         self.QSignal = signal
@@ -54,9 +54,9 @@ class QHsm:
 
     def init(self):
         assert self._CurrentState == self._TopState
-        
+
         self.initialiseStateMachine()
-        
+
         state = self._CurrentState
         self.trigger(state, QSignalsEvents.Entry)
         self.triggerInitState(state)
@@ -71,7 +71,7 @@ class QHsm:
         if None == state:
             raise "Unexpected: " + str(state) + " on signal: " + str(signal)
         pass
-        
+
         result = state(signalEvent)
         return result
 
@@ -80,7 +80,7 @@ class QHsm:
         while self._MySourceState != None:
             if self._MySourceState == self._TopState:
                 self.unhandledTransition(ev)
-            
+
             parentState = self._MySourceState(ev)
             if parentState != None:
                 self._MySourceState = parentState
@@ -88,7 +88,7 @@ class QHsm:
                 self._MySourceState = None
             pass
         pass
-    
+
 
     def transitionTo(self, targetState):
         assert targetState != self._TopState, "TargetState {%s} in TransitionTo is TopState" % (targetState,)
@@ -116,7 +116,7 @@ class QHsm:
     def currentStateName(self):
         if None == self._CurrentState:
             return "QNULLSTATE"
-        
+
         state = self._CurrentState
         name = []
         while state != self._TopState:
@@ -124,7 +124,7 @@ class QHsm:
             state = self.getSuperState(state)
         name = ".".join(name)
         return name
-    
+
     def transitionFromSourceStateToTargetState(self, targetState):
         class Holder:
             pass
@@ -134,35 +134,35 @@ class QHsm:
             holder.statesTargetToLCA,
             holder.indexFirstStateToEnter)
         pass
-    
+
     def exitUpToLCA(self, targetState, holder):
         holder.statesTargetToLCA = []
         holder.statesTargetToLCA.append(targetState)
         holder.indexFirstStateToEnter = 0
-        
+
         # (a) check my source state == target state (transition to self)
         if self._MySourceState == targetState:
             self.trigger(self._MySourceState, QSignalsEvents.Exit)
             return
-        
+
         # (b) check my source state == super state of the target state
         targetSuperState = self.getSuperState(targetState)
         if self._MySourceState == targetSuperState:
             return
-        
+
         # (c) check super state of my source state == super state of target state
         # (most common)
         sourceSuperState = self.getSuperState(self._MySourceState)
         if sourceSuperState == targetSuperState:
             self.trigger(self._MySourceState, QSignalsEvents.Exit)
             return
-        
+
         # (d) check super state of my source state == target
         if sourceSuperState == targetState:
             self.trigger(self._MySourceState, QSignalsEvents.Exit)
             holder.indexFirstStateToEnter = -1 # we don't enter the LCA
             return
-        
+
         # (e) check rest of my source = super state of super state ... of target state hierarchy
         holder.statesTargetToLCA.append(targetSuperState)
         holder.indexFirstStateToEnter += 1
@@ -170,15 +170,15 @@ class QHsm:
         while state != None:
             if self._MySourceState == state:
                 return
-            
+
             holder.statesTargetToLCA.append(state)
             holder.indexFirstStateToEnter += 1
             state = self.getSuperState(state)
             pass
-        
+
         # For both remaining cases we need to exit the source state
         self.trigger(self._MySourceState, QSignalsEvents.Exit)
-        
+
         # (f) check rest of super state of my source state ==
         #     super state of super state of ... target state
         # The array list is currently filled with all the states
@@ -190,7 +190,7 @@ class QHsm:
                 # i.e., we do not enter the LCA
                 return
             pass
-        
+
         # (g) check each super state of super state ... of my source state ==
         #     super state of super state of ... target state
         state = sourceSuperState
@@ -205,11 +205,11 @@ class QHsm:
             self.trigger(state, QSignalsEvents.Exit)
             state = self.getSuperState(state)
             pass
-        
+
         # We should never get here
         raise "Mal formed Hierarchical State Machine"
         pass
-    
+
     def transitionDownToTargetState(self,
         targetState,
         statesTargetToLCA,
@@ -219,7 +219,7 @@ class QHsm:
         for stateIndex in range(indexFirstStateToEnter, -1, -1):
             self.trigger(statesTargetToLCA[stateIndex], QSignalsEvents.Entry)
             pass
-        
+
         self._CurrentState = targetState
         # At last we are ready to initialize the target state.
         # If the specified target state handles init then the effective
@@ -227,7 +227,7 @@ class QHsm:
         # the transition.
         self.triggerInitState(targetState)
 
-    def triggerInitState(self, state):        
+    def triggerInitState(self, state):
         while None == self.trigger(state, QSignalsEvents.Init):
             # Initial transition must be one level deep
             assert state == self.getSuperState(self._CurrentState)
@@ -235,7 +235,7 @@ class QHsm:
             self.trigger(state, QSignalsEvents.Entry)
             pass
         pass
-    
+
     # end class QHsm
     pass
 

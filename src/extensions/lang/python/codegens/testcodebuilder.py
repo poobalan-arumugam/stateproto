@@ -6,7 +6,7 @@ import codegens.jsgen
 
 
 if __name__ == "__main__":
-    
+
     def generatePythonCode(parsedModel):
         lang = codegens.pygen.PythonLanguageGenerator()
         cb = codegens.codebuilder.CodeBuilder(parsedModel, lang)
@@ -20,12 +20,12 @@ if __name__ == "__main__":
     def usage(defaultFileName):
         print """
     usage:
-        testcodebuilder.py [-js,-py] -f stateMachineFileName.sm1 
+        testcodebuilder.py [-js,-py] -f stateMachineFileName.sm1
 
         where either pass in -js to generate javascript
                           or -py to generate python code.
 
-        the default filename for this testcode is %s                          
+        the default filename for this testcode is %s
 """ % (defaultFileName,)
         import sys
         sys.exit(2)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
             pass
         return lang, fileName
 
-    lang, fileName = processArgs()    
+    lang, fileName = processArgs()
 
     parsedModel = ParsedModel(fileName)
 
@@ -59,4 +59,4 @@ if __name__ == "__main__":
     generators["PY"] = generatePythonCode
     generators["JS"] = generateJavascriptCode
     generators[lang](parsedModel)
-    
+

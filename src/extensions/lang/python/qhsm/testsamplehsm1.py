@@ -19,7 +19,7 @@ class TestSample1(qhsm.QHsm):
         else:
             return self._TopState
         return None
-    
+
 
     def s_State0(self, ev):
         if ev.QSignal == "Bye":
@@ -39,7 +39,7 @@ class TestSample1(qhsm.QHsm):
         else:
             return self.s_StateX
         return None
-    
+
 
     def s_State1(self, ev):
         if ev.QSignal == "Hello":
@@ -52,7 +52,7 @@ class TestSample1(qhsm.QHsm):
         else:
             return self._TopState
         return None
-    
+
 
     #end of TestSample1
     pass

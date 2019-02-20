@@ -6,7 +6,7 @@ from .codegenbase import *
 class SmalltalkVisitor (CodeGenVisitor):
     def __init__(self, parsedModel):
         CodeGenVisitor.__init__(self, parsedModel)
-        
+
     def stateMethodTemplate(self, dict):
         return """
     %(stateName)s: ev

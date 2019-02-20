@@ -19,7 +19,7 @@ class TestHsm (QHsm):
             return None
         print("otherwise stateX", ev)
         return self._TopState
-                                
+
     def state0(self, ev):
         if ev.QSignal == "Hello":
             print("state0::", ev)
@@ -27,7 +27,7 @@ class TestHsm (QHsm):
             return None
         print("otherwise state0", ev)
         return self.stateX
-    
+
     def state1(self, ev):
         if ev.QSignal == "Hello":
             print("state1::", ev)
