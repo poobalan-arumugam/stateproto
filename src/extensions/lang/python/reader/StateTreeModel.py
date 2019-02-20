@@ -49,20 +49,19 @@ def buildStateTree(parsedModel):
     class CollectStates:
         def __init__(self, collector):
             self._Collector = collector
-            
+
         def visitState(self, item, arg):
             self._Collector.append(item)
-            
+
         def visitTransition(self, item, arg):
             pass
 
         def visitStateTransitionPort(self, item, arg):
             pass
-        
+
     states = []
     collector = CollectStates(states)
     parsedModel.do(lambda item, arg: item.accept(collector, arg), None)
     stateTreeRoot = StateTreeNode(None, parsedModel.NoParentState())
     stateTreeRoot.addChildrenFromList(states)
     return stateTreeRoot
-

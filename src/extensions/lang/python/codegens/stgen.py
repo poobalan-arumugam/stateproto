@@ -1,5 +1,7 @@
+from __future__ import print_function
+
 from reader.parseStateProtoFile import *
-from codegenbase import *
+from .codegenbase import *
 
 class SmalltalkVisitor (CodeGenVisitor):
     def __init__(self, parsedModel):
@@ -14,7 +16,7 @@ class SmalltalkVisitor (CodeGenVisitor):
                 (ev.QSignal == QSIGNAL.C_EXIT)
                     ifTrue: [%(exitAction)s]
                 ]
-            
+
         ^ #%(parentStateName)s:.
     }""" % dict
     pass

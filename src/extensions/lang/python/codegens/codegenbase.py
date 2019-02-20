@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from reader.parseStateProtoFile import *
 
 class CodeGenVisitor (GenericPrintVisitor):
@@ -16,7 +18,7 @@ class CodeGenVisitor (GenericPrintVisitor):
 
     def isTopState(self, parentStateName):
         return parentStateName == "_TopState"
-    
+
     def visitState(self, item, arg):
         stateName = item.name
         entryAction = self.getAction(item.entry)
@@ -26,7 +28,7 @@ class CodeGenVisitor (GenericPrintVisitor):
         parentStateName = self.fixParentStateName(parentStateName)
         transitions = self.getTransitionsTextForState(item)
         childStartStateName = item.childStartStateName
-        print self.stateMethodTemplate(locals())
+        print(self.stateMethodTemplate(locals()))
     pass
 
     def getTransitionsTextForState(self, state):
@@ -35,7 +37,7 @@ class CodeGenVisitor (GenericPrintVisitor):
             innerGuardText = self.transitionsToStringWithGuardsTemplate(transitionGroup)
             result = self.transitionsForOuterStateMethodTemplate(locals())
             return result
-        
+
         def reduceGroupedTransition(prevValue, transitionGroup, arg):
             outerLevel = getTransitionToStringIgnoringGuards(transitionGroup)
             result = prevValue + outerLevel
